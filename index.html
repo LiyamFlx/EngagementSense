@@ -3,41 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EngageSense</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>EngageSense - Real-Time Engagement Tracking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <h1>EngageSense</h1>
-    <p>Real-Time Physical, Mental, Emotional, and Spiritual Engagement</p>
+    <p>Track Real-Time Physical, Mental, Emotional, and Spiritual Engagement</p>
+    <button id="toggleDarkMode">Toggle Dark Mode</button>
   </header>
 
+  <nav>
+    <a href="#startScreen">Start</a>
+    <a href="#dataInputScreen">Data Input</a>
+    <a href="#analysisScreen">Analysis</a>
+    <a href="#insightsScreen">Insights</a>
+    <a href="#dashboardScreen">Dashboard</a>
+    <a href="#feedback">Feedback</a>
+  </nav>
+
+  <div id="loadingSpinner" class="spinner"></div>
+
   <div class="container">
-    <div class="button-row">
-      <button id="startTracking" class="btn">Start Tracking</button>
-      <button id="stopTracking" class="btn">Stop Tracking</button>
-      <button id="exportData" class="btn">Export Data</button>
-    </div>
+    <!-- Start Screen -->
+    <section id="startScreen">
+      <h2>Welcome to EngageSense</h2>
+      <p>Empowering performers with real-time intelligence and deep analytics.</p>
+      <button id="getStarted">Get Started</button>
+    </section>
 
-    <div class="table-responsive">
-      <table class="table" id="dataTable">
-        <thead>
-          <tr>
-            <th>Time (s)</th>
-            <th>Physical</th>
-            <th>Mental</th>
-            <th>Emotional</th>
-            <th>Spiritual</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
+    <!-- Data Input Screen -->
+    <section id="dataInputScreen">
+      <h2>Data Input</h2>
+      <p>Connect your wearable devices or upload data files for analysis.</p>
+      <div class="button-row">
+        <button id="connectWearable">Connect Wearable</button>
+        <input type="file" id="fileUpload" style="display: none;">
+        <button id="uploadFile">Upload File</button>
+      </div>
+      <div id="livePreview">Live Data Preview</div>
+    </section>
 
-    <canvas id="engagementChart"></canvas>
+    <!-- Analysis Screen -->
+    <section id="analysisScreen">
+      <h2>Analysis</h2>
+      <div id="matrixVisualization">Multi-Dimensional Matrix Visualization</div>
+      <div id="trendsDashboard">Dynamic Trends Dashboard</div>
+    </section>
+
+    <!-- Insights & Recommendations Screen -->
+    <section id="insightsScreen">
+      <h2>Insights & Recommendations</h2>
+      <div id="engagementScore">Engagement Score Breakdown</div>
+      <div id="recommendations">Actionable Recommendations</div>
+      <div id="heatmaps">Interactive Heatmaps</div>
+    </section>
+
+    <!-- Dashboard & Report Export Screen -->
+    <section id="dashboardScreen">
+      <h2>Dashboard & Reports</h2>
+      <div id="dashboard">Polished, Professional Dashboard</div>
+      <div id="exportOptions">Export Options</div>
+    </section>
+
+    <!-- Feedback Form -->
+    <section id="feedback">
+      <h2>Feedback</h2>
+      <form id="feedbackForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
   </div>
 
-  <script src="script.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
